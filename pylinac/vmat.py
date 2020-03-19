@@ -210,8 +210,13 @@ class VMATBase:
 
     @property
     def roi_mean_values_std(self) -> float:
-        """Return the value of the maximum R_deviation segment."""
-        return np.array([segment.r_dev for segment in self.segments])
+        """Return the standard deviation of each roi"""
+        return np.abs(np.array([segment.r_dev for segment in self.segments]))
+
+    @property
+    def normalization_factor(self) -> float:
+        """Return the normalization factor"""
+        return 
 
 
     def plot_analyzed_image(self, show: bool=True):

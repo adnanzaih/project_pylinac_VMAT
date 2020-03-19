@@ -135,16 +135,6 @@ def load(path: str, **kwargs) -> ImageLike:
     Examples
     --------
     Load an image from a file and then apply a filter::
-
-        >>> from pylinac.core.image import load
-        >>> my_image = "C:\QA\image.tif"
-        >>> img = load(my_image)  # returns a FileImage
-        >>> img.filter(5)
-
-    Loading from an array is just like loading from a file::
-
-        >>> arr = np.arange(36).reshape(6, 6)
-        >>> img = load(arr)  # returns an ArrayImage
     """
     if isinstance(path, BaseImage):
         return path
@@ -194,10 +184,6 @@ def load_multiples(image_file_list: List, method: str='mean', stretch: bool=True
     Examples
     --------
     Load multiple images::
-
-        >>> from pylinac.core.image import load_multiples
-        >>> paths = ['starshot1.tif', 'starshot2.tif']
-        >>> superimposed_img = load_multiples(paths)
     """
     # load images
     img_list = [load(path, **kwargs) for path in image_file_list]

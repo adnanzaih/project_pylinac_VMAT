@@ -1,7 +1,7 @@
 from pylinac import DRGS
 
-open_img = 'N:/MedicalPhysics/Quality Control Program/Treatment/Monthly/Junctions and Picket Fence/Unit 1 SN 3951/2020_03_10/DRGS/ZPHYSICS_MONTHLY_U1/RI.ZPHYSICS_MONTHLY_U1.MV_179_0a.dcm'
-dmlc_img = 'N:/MedicalPhysics/Quality Control Program/Treatment/Monthly/Junctions and Picket Fence/Unit 1 SN 3951/2020_03_10/DRGS/ZPHYSICS_MONTHLY_U1/RI.ZPHYSICS_MONTHLY_U1.MV_208_0a.dcm'
+open_img = 'RI.ZPHYSICS_MONTHLY_U1.MV_208_0a.dcm'
+dmlc_img = 'RI.ZPHYSICS_MONTHLY_U1.MV_179_0a.dcm'
 
 mydrgs = DRGS(image_paths=(open_img, dmlc_img))
 
