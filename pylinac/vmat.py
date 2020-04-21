@@ -360,15 +360,17 @@ class VMATBase:
                 f'Tolerance (%): {self._tolerance*100:2.1f}',
                 f'Absolute mean deviation (%): {self.avg_abs_r_deviation:2.2f}',
                 f'Maximum deviation (%): {self.max_r_deviation:2.2f}',
-                f'ROI 1 Mean: {self.roi_mean_values[0]:2.3f} \u00B1 {self.roi_mean_values_std[0]:2.3f}',
-                f'ROI 2 Mean: {self.roi_mean_values[1]:2.3f} \u00B1 {self.roi_mean_values_std[1]:2.3f}',
-                f'ROI 3 Mean: {self.roi_mean_values[2]:2.3f} \u00B1 {self.roi_mean_values_std[2]:2.3f}',
-                f'ROI 4 Mean: {self.roi_mean_values[3]:2.3f} \u00B1 {self.roi_mean_values_std[3]:2.3f}',
-                f'ROI 5 Mean: {self.roi_mean_values[4]:2.3f} \u00B1 {self.roi_mean_values_std[4]:2.3f}',
-                f'ROI 6 Mean: {self.roi_mean_values[5]:2.3f} \u00B1 {self.roi_mean_values_std[5]:2.3f}',
-                f'ROI 7 Mean: {self.roi_mean_values[6]:2.3f} \u00B1 {self.roi_mean_values_std[6]:2.3f}',
                 ]
         canvas.add_text(text=text, location=(1, 25.5))
+
+        for i in range(7):
+            if self.roi_mean_values[i] < 0.885 or self.roi_mean_values[i] > 1.015 :
+                canvas.add_textRed(text=[f'ROI '+str(i)+f' Mean: {self.roi_mean_values[i]:2.3f} \u00B1 {self.roi_mean_values_std[i]:2.3f}'], location=(1,23.3-0.45*i))
+            else:
+                canvas.add_textGreen(
+                    text=[f'ROI '+str(i)+f' Mean: {self.roi_mean_values[i]:2.3f} \u00B1 {self.roi_mean_values_std[i]:2.3f}'],
+                    location=(1, 23.3-0.45*i))
+
         if notes is not None:
             canvas.add_text(text="Notes:", location=(1, 5.5), font_size=8)
             canvas.add_text(text=notes, location=(1, 5))
