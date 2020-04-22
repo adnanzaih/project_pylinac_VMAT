@@ -73,6 +73,56 @@ class PylinacCanvas:
                 textobj.textLine(line)
         self.canvas.drawText(textobj)
 
+    def add_textRed(self, text: Union[str, List[str]], location: Sequence, font_size: int=10): #font_size = 10
+        """Generic text drawing function.
+
+        Parameters
+        ----------
+        location : Sequence of two numbers
+            The first item is the distance from left edge in cm
+            The second item is the distance from bottom edge in cm.
+        text : str, list of strings
+            Text data; if str, prints single line.
+            If list of strings, each list item is printed on its own line.
+        font_size : int
+            Text font size.
+        """
+        textobj = self.canvas.beginText()
+        textobj.setTextOrigin(location[0]*cm, location[1]*cm)
+        textobj.setFont(self._font, int(font_size))
+        textobj.setFillColorRGB(1,0,0)
+        if isinstance(text, str):
+            textobj.textLine(text)
+        elif isinstance(text, list):
+            for line in text:
+                textobj.textLine(line)
+        self.canvas.drawText(textobj)
+
+    def add_textGreen(self, text: Union[str, List[str]], location: Sequence, font_size: int = 10):  # font_size = 10
+        """Generic text drawing function.
+
+        Parameters
+        ----------
+        location : Sequence of two numbers
+            The first item is the distance from left edge in cm
+            The second item is the distance from bottom edge in cm.
+        text : str, list of strings
+            Text data; if str, prints single line.
+            If list of strings, each list item is printed on its own line.
+        font_size : int
+            Text font size.
+        """
+        textobj = self.canvas.beginText()
+        textobj.setTextOrigin(location[0] * cm, location[1] * cm)
+        textobj.setFont(self._font, int(font_size))
+        textobj.setFillColorRGB(0,100,0)
+        if isinstance(text, str):
+            textobj.textLine(text)
+        elif isinstance(text, list):
+            for line in text:
+                textobj.textLine(line)
+        self.canvas.drawText(textobj)
+
     def add_image(self, image_data: io.BytesIO, location: Sequence, dimensions: Sequence, preserve_aspect_ratio: bool=True):
         image_data.seek(0)
         image = ImageReader(Image.open(image_data))

@@ -22,4 +22,4 @@ mydrgs.analyze(tolerance=1.5)
 # print(mydrgs.results())
 # view analyzed images
 # mydrgs.plot_analyzed_image()
-mydrgs.publish_pdf("/Users/adnanhafeez/Documents/TBCC Work/PyLinac Project/Data/Unit 2/2018-07-20/DA.pdf")
+mydrgs.publish_pdf("test.pdf")
