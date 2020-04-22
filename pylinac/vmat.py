@@ -360,13 +360,13 @@ class VMATBase:
                 f'Tolerance (%): {self._tolerance*100:2.1f}',
                 f'Absolute mean deviation (%): {self.avg_abs_r_deviation:2.2f}',
                 f'Maximum deviation (%): {self.max_r_deviation:2.2f}',
-                f'ROI 1 Mean: {self.roi_mean_values[0]:2.3f} \u00B1 {self.roi_mean_values_std[0]:2.3f}',
-                f'ROI 2 Mean: {self.roi_mean_values[1]:2.3f} \u00B1 {self.roi_mean_values_std[1]:2.3f}',
-                f'ROI 3 Mean: {self.roi_mean_values[2]:2.3f} \u00B1 {self.roi_mean_values_std[2]:2.3f}',
-                f'ROI 4 Mean: {self.roi_mean_values[3]:2.3f} \u00B1 {self.roi_mean_values_std[3]:2.3f}',
-                f'ROI 5 Mean: {self.roi_mean_values[4]:2.3f} \u00B1 {self.roi_mean_values_std[4]:2.3f}',
-                f'ROI 6 Mean: {self.roi_mean_values[5]:2.3f} \u00B1 {self.roi_mean_values_std[5]:2.3f}',
-                f'ROI 7 Mean: {self.roi_mean_values[6]:2.3f} \u00B1 {self.roi_mean_values_std[6]:2.3f}',
+                f'ROI 1 Mean: {self.roi_mean_values[0]:2.3f} \u00B1 {self.roi_mean_values_std[0]*self.roi_mean_values[0]/100:2.5f}',
+                f'ROI 2 Mean: {self.roi_mean_values[1]:2.3f} \u00B1 {self.roi_mean_values_std[1]*self.roi_mean_values[1]/100:2.3f}',
+                f'ROI 3 Mean: {self.roi_mean_values[2]:2.3f} \u00B1 {self.roi_mean_values_std[2]*self.roi_mean_values[2]/100:2.3f}',
+                f'ROI 4 Mean: {self.roi_mean_values[3]:2.3f} \u00B1 {self.roi_mean_values_std[3]*self.roi_mean_values[3]/100:2.3f}',
+                f'ROI 5 Mean: {self.roi_mean_values[4]:2.3f} \u00B1 {self.roi_mean_values_std[4]*self.roi_mean_values[4]/100:2.3f}',
+                f'ROI 6 Mean: {self.roi_mean_values[5]:2.3f} \u00B1 {self.roi_mean_values_std[5]*self.roi_mean_values[5]/100:2.3f}',
+                f'ROI 7 Mean: {self.roi_mean_values[6]:2.3f} \u00B1 {self.roi_mean_values_std[6]*self.roi_mean_values[6]/100:2.3f}',
                 ]
         canvas.add_text(text=text, location=(1, 25.5))
         if notes is not None:

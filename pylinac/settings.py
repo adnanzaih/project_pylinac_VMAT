@@ -2,7 +2,7 @@
 from matplotlib.pyplot import cm
 
 # use a string or colormap option. See options here: http://matplotlib.org/examples/color/colormaps_reference.html
-DICOM_COLORMAP = cm.gray
+DICOM_COLORMAP = cm.jet
 ARRAY_COLORMAP = cm.viridis
 PATH_TRUNCATION_LENGTH = 80
 
